@@ -1,0 +1,14 @@
+<br />
+<div class='col-md-12'>
+  <h3 class='text-center'>Timeline</h3>
+  <div *ngFor='let Peep of tweets'>
+    <div class="card">
+      <div class="card-content">
+        <p style="float: left;">From: {{Peep.owner.alias}}</p>
+        <p style="float: right;">Posted on: {{Peep.date}}</p>
+        <br />
+        <p>Message: {{Peep.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>

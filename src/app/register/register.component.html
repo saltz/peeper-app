@@ -1,0 +1,68 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+  <div class="center-align">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-content">
+          <div class="left-align">
+            <div class="alert alert-danger" [hidden]="!error">
+              There was a problem registrating. Please try again.
+            </div>
+            <form #registerForm="ngForm">
+              <div class="form-group">
+                <input id="alias" class="form-control" type="text" placeholder="Alias *" name="alias" required
+                  [(ngModel)]="user.alias" #alias="ngModel">
+                <div [hidden]="alias.valid || alias.pristine" class="text-danger">
+                  Alias is required
+                </div>
+              </div>
+              <div class="form-group">
+                <input id="email" class="form-control" type="text" placeholder="Email *" name="email" required
+                  [(ngModel)]="user.email" #email="ngModel">
+                <div [hidden]="email.valid || email.pristine" class="text-danger">
+                  Email is required
+                </div>
+              </div>
+              <div class="form-group">
+                <input id="firstname" class="form-control" type="text" placeholder="Firstname *" name="firstname"
+                  required [(ngModel)]="user.firstname" #firstname="ngModel">
+                <div [hidden]="firstname.valid || firstname.pristine" class="text-danger">
+                  Firstname is required
+                </div>
+              </div>
+              <div class="form-group">
+                <input id="lastname" class="form-control" type="text" placeholder="Lastname *" name="lastname" required
+                  [(ngModel)]="user.lastname" #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine" class="text-danger">
+                  Lastname is required
+                </div>
+              </div>
+              <div class="form-group">
+                    <input id="picture" class="form-control" type="text" placeholder="Picture url" name="picture">
+      
+                  </div>
+              <div class="form-group">
+                <input id="hash" class="form-control" type="password" placeholder="Password *" name="hash"
+                  required [(ngModel)]="user.hash" #hash="ngModel">
+                <div [hidden]="hash.valid || hash.pristine" class="text-danger">
+                  Password is required
+                </div>
+              </div>
+
+              <br />
+              <button class="registerButton btn btn-success btn-lg btn-block" (click)="register()"
+                [disabled]="!registerForm.form.valid">
+                <span class="ml-1">Register</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

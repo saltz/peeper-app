@@ -1,0 +1,29 @@
+<br />
+<div class='col-md-12'>
+  <div class='col-md-2 picture'>
+    <img width="180px" src={{user.picture}}>
+  </div>
+  <div class='col-md-10 info'>
+    <p>Alias: {{user.alias}}</p>
+    <p>Role: {{user.role}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Website: {{user.website}}</p>
+    <p>Biography: {{user.biography}}</p>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class='col-md-12'>
+  <h3 class='text-center'>Peeps</h3>
+  <div *ngFor='let Peep of recentTweets'>
+    <div class="card">
+      <div class="card-content">
+        <p style="float: left;">From: {{Peep.owner.userName}}</p>
+        <p style="float: right;">Posted on: {{Peep.createdAt}}</p>
+        <br />
+        <p>Message: {{Peep.text}}</p>
+        <p style="float: right;">Likes: {{Peep.likes.length}}</p>
+        <p style="float: right;">Reports: {{Peep.reports.length}}</p>
+      </div>
+    </div>
+  </div>
+</div>
